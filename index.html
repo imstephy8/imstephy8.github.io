@@ -4,73 +4,106 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Stephanie Yu Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Stephanie Yu</h1>
-        <p>Computer Science & Mathematics student at UCI | Aspiring SWE/SDE</p>
-      
-        <nav>
-          <a href="#about">About</a>
-          <a href="#projects">Projects</a>
-          <a href="#resume">Resume</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </header>
+  <header class="top-bar">
+    <div class="site-name">Stephanie Yu</div>
 
-  <section id = 'About'>
-    <h2>About Me</h2>
-    <p>
-      Hi, I’m Stephanie Yu, a Computer Science and Mathematics student at UCI.
-      I’m interested in software engineering and enjoy building clear, useful,
-      and practical projects. I’m currently developing my technical skills
-      through coursework, coding projects, and continuous learning.
-    </p>
-  </section>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-  <section id="projects">
-    <h2>Projects</h2>
-  
-    <div class="project-card">
-      <h3>File Management Program</h3>
+  <main>
+    <section id="home" class="hero"></section>
+
+    <section id="about">
+      <h2>About</h2>
       <p>
-        Built with Python. Developed a command-based file management program
-        that supports browsing directories, listing files, and organizing file
-        content through structured user input.
+        Hi, I’m Stephanie Yu, a Computer Science and Mathematics student at UCI.
+        I’m interested in software engineering and enjoy building structured,
+        practical, and user-focused projects. I’m currently strengthening my
+        technical foundation through coursework, hands-on programming projects,
+        and continuous learning.
       </p>
-    </div>
-  
-    <div class="project-card">
-      <h3>Journal Application</h3>
-      <p>
-        Built with Python. Created a journal management application that allows
-        users to create, edit, open, and store journal entries using a structured
-        command system and local file storage.
-      </p>
-    </div>
-  
-    <div class="project-card">
-      <h3>Portfolio Website</h3>
-      <p>
-        Built with HTML and CSS. Designed and developed a personal portfolio website
-        to showcase my background, projects, resume, and contact information in a
-        clean and professional format.
-      </p>
-    </div>
-  </section>
+    </section>
 
-  <section id="resume">
-    <h2>Resume</h2>
-    <a class="resume-button" href="StephanieYu2026Summer.pdf" target="_blank">View My Resume</a>
-  </section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="skills-list">
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">C++</span>
+        <span class="skill-tag">HTML</span>
+        <span class="skill-tag">CSS</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">OOP</span>
+        <span class="skill-tag">Testing</span>
+        <span class="skill-tag">File I/O</span>
+        <span class="skill-tag">Problem Solving</span>
+      </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p><strong>Email:</strong> <a href="mailto:stephanieyu1025@gmail.com">stephanieyu1025@gmail.com</a></p>
-    <p><strong>GitHub:</strong> <a href="https://github.com/imstephy8" target="_blank">imstephy8</a></p>
-    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stephyu1025/" target="_blank">stephyu1025</a></p>
-  </section>
+    <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="project-card">
+        <h3>File Management Program</h3>
+        <p class="project-tech">Python</p>
+        <p>
+          Built a command-based file management program that supports browsing
+          directories, listing files, and organizing file content through
+          structured user input.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Journal Application</h3>
+        <p class="project-tech">Python | File Storage | Command-Line Interface</p>
+        <p>
+          Created a journal management application that allows users to create,
+          open, edit, and store journal entries using a structured command
+          system and local file storage.
+        </p>
+      </div>
+
+      <div class="project-card">
+        <h3>Portfolio Website</h3>
+        <p class="project-tech">HTML | CSS | GitHub Pages</p>
+        <p>
+          Designed and developed a personal portfolio website to present my
+          background, projects, resume, and contact information in a clean,
+          professional, and easy-to-navigate format.
+        </p>
+      </div>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
+      <a class="resume-button" href="StephanieYu2026Summer.pdf" target="_blank">View My Resume</a>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Email:</strong> <a href="mailto:stephanieyu1025@gmail.com">stephanieyu1025@gmail.com</a></p>
+      <p><strong>GitHub:</strong> <a href="https://github.com/imstephy8" target="_blank">imstephy8</a></p>
+      <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/stephyu1025/" target="_blank">stephyu1025</a></p>
+      <p><strong>Website:</strong> <a href="https://stephanieyyu.com" target="_blank">stephanieyyu.com</a></p>
+    </section>
+  </main>
 
   <script src="script.js"></script>
 </body>
