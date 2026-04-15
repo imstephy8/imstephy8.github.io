@@ -1,184 +1,201 @@
 html {
-    scroll-behavior: smooth;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 28px 18px 80px;
+  line-height: 1.7;
+  background-color: #f9f9f9;
+  color: #111111;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0 36px 0;
+  width: 100%;
+}
+
+.site-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  animation: pastelShift 8s ease-in-out infinite;
+}
+
+@keyframes pastelShift {
+  0% {
+    color: #7faedb;
   }
-  
+  25% {
+    color: #b39ddb;
+  }
+  50% {
+    color: #e6a6be;
+  }
+  75% {
+    color: #8bbf9f;
+  }
+  100% {
+    color: #7faedb;
+  }
+}
+
+nav {
+  display: flex;
+  gap: 52px;
+  margin-left: auto;
+}
+
+nav a {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 100%;
+}
+
+.hero {
+  min-height: 72vh;
+}
+
+section {
+  margin-bottom: 90px;
+}
+
+h2 {
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 18px;
+  border-bottom: 1px solid #dddddd;
+  padding-bottom: 10px;
+}
+
+p {
+  font-size: 17px;
+  margin-top: 0;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  padding: 10px 16px;
+  border: 1px solid #dddddd;
+  border-radius: 999px;
+  font-size: 14px;
+  background-color: #ffffff;
+}
+
+.project-card {
+  background-color: #ffffff;
+  padding: 24px;
+  margin-bottom: 22px;
+  border-radius: 12px;
+  border: 1px solid #e7e7e7;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 22px;
+}
+
+.project-tech {
+  font-size: 14px;
+  color: #777777;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.primary-button,
+.secondary-button,
+.resume-button {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.resume-button {
+  background-color: #111111;
+  color: white;
+}
+
+.resume-button:hover {
+  background-color: #333333;
+  transform: translateY(-2px);
+}
+
+a {
+  color: #111111;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#contact p {
+  margin: 10px 0;
+}
+
+@media (max-width: 900px) {
   body {
-    font-family: Arial, sans-serif;
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 28px 18px 80px;
-    line-height: 1.7;
-    background-color: #f9f9f9;
-    color: #111111;
+    padding: 24px 20px 60px;
   }
-  
+
   .top-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0 36px 0;
-    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
   }
-  
-  .site-name {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 21px;
-    font-weight: 600;
-    letter-spacing: 0.2px;
-    color: #6fa8c9;
-    margin-left: 0;
-  }
-  
+
   nav {
-    display: flex;
-    gap: 52px;
-    margin-left: auto;
-  }
-  
-  nav a {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    font-size: 13px;
-    letter-spacing: 0.8px;
-    text-transform: uppercase;
-    color: #111111;
-    text-decoration: none;
-    font-weight: 500;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  main {
-    width: 100%;
-  }
-  
-  .hero {
-    min-height: 72vh;
-  }
-  
-  section {
-    margin-bottom: 90px;
-  }
-  
-  h2 {
-    font-size: 26px;
-    font-weight: 600;
-    margin-bottom: 18px;
-    border-bottom: 1px solid #dddddd;
-    padding-bottom: 10px;
-  }
-  
-  p {
-    font-size: 17px;
-    margin-top: 0;
-  }
-  
-  .skills-list {
-    display: flex;
     flex-wrap: wrap;
-    gap: 12px;
+    gap: 14px 18px;
   }
-  
-  .skill-tag {
-    padding: 10px 16px;
-    border: 1px solid #dddddd;
-    border-radius: 999px;
-    font-size: 14px;
-    background-color: #ffffff;
+
+  .hero {
+    min-height: 55vh;
   }
-  
-  .project-card {
-    background-color: #ffffff;
-    padding: 24px;
-    margin-bottom: 22px;
-    border-radius: 12px;
-    border: 1px solid #e7e7e7;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+@media (max-width: 600px) {
+  .site-name {
+    font-size: 13px;
   }
-  
-  .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+
+  nav a {
+    font-size: 12px;
   }
-  
-  .project-card h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
-    font-size: 22px;
+
+  h2 {
+    font-size: 24px;
   }
-  
-  .project-tech {
-    font-size: 14px;
-    color: #777777;
-    margin-bottom: 12px;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-  }
-  
-  .primary-button,
-  .secondary-button,
-  .resume-button {
-    display: inline-block;
-    padding: 12px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    transition: all 0.25s ease;
-  }
-  
-  .resume-button {
-    background-color: #111111;
-    color: white;
-  }
-  
-  .resume-button:hover {
-    background-color: #333333;
-    transform: translateY(-2px);
-  }
-  
-  a {
-    color: #111111;
-  }
-  
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  #contact p {
-    margin: 10px 0;
-  }
-  
-  @media (max-width: 900px) {
-    body {
-      padding: 24px 20px 60px;
-    }
-  
-    .top-bar {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 18px;
-    }
-  
-    nav {
-      flex-wrap: wrap;
-      gap: 14px 18px;
-    }
-  
-    .hero {
-      min-height: 55vh;
-    }
-  }
-  
-  @media (max-width: 600px) {
-    .site-name {
-      font-size: 28px;
-    }
-  
-    nav a {
-      font-size: 12px;
-    }
-  
-    h2 {
-      font-size: 24px;
-    }
-  }
+}
