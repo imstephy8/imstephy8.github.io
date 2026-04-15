@@ -20,6 +20,100 @@ body {
   width: 100%;
 }
 
+.hero {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: fit-content;
+  margin: 0 auto;
+}
+
+.pixel-character {
+  width: 100px;
+  height: auto;
+  image-rendering: pixelated;
+  display: block;
+  flex-shrink: 0;
+  transform: translateY(-8px);
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-kicker {
+  margin: 0 0 6px 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #c5ae72;
+  line-height: 1;
+}
+
+.hero-title {
+  margin: 0;
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-size: clamp(38px, 5vw, 58px);
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: #17345f;
+}
+
+.hero-title span {
+  display: block;
+}
+
+.hero-subtitle {
+  margin: 8px 0 0 4px;
+  font-family: 'Inter', sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #666666;
+  min-height: 18px;
+}
+
+.typing-text {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid #666666;
+  width: 0;
+  max-width: max-content;
+  animation: typing 3.2s steps(29, end) 0.5s forwards, blink 0.8s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
 .site-name {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 17px;
@@ -70,12 +164,12 @@ main {
   width: 100%;
 }
 
-.hero {
-  min-height: 72vh;
-}
-
 section {
   margin-bottom: 90px;
+}
+
+.hero {
+  margin-bottom: 0;
 }
 
 h2 {
