@@ -255,24 +255,24 @@ section {
 }
 
 .project-card-1 {
-  top: 110px;
-  right: 7px;
+  top: 80px;
+  right: 10px;
   width: 300px;
-  z-index: 21;
+  z-index: 23;
 }
 
 .project-card-2 {
-  top: 310px;
-  right: 15px;
+  top: 250px;
+  right: 40px;
   width: 300px;
   z-index: 22;
 }
 
 .project-card-3 {
-  top: 510px;
-  right: 7px;
+  top: 420px;
+  right: 10px;
   width: 300px;
-  z-index: 23;
+  z-index: 21;
 }
 
 .mac-card-bar {
