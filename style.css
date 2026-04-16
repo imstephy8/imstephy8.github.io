@@ -254,23 +254,23 @@ section {
   width: 220px;
 }
 
-.project-card-3 {
+.project-card-1 {
   top: 110px;
-  right: 10px;
+  right: 7px;
   width: 300px;
   z-index: 21;
 }
 
 .project-card-2 {
   top: 310px;
-  right: 10px;
+  right: 15px;
   width: 300px;
   z-index: 22;
 }
 
-.project-card-1 {
+.project-card-3 {
   top: 510px;
-  right: 10px;
+  right: 7px;
   width: 300px;
   z-index: 23;
 }
