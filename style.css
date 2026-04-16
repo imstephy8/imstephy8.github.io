@@ -2,14 +2,59 @@ html {
   scroll-behavior: smooth;
 }
 
+:root {
+  --bg-color: #f9f9f9;
+  --text-color: #111111;
+  --card-bg: #ffffff;
+  --card-border: #dddddd;
+  --nav-text: #111111;
+  --button-bg: #ffffff;
+  --button-text: #111111;
+  --muted-text: #666666;
+  --hero-title-color: #17345f;
+  --hero-kicker-color: #c5ae72;
+  --bar-bg: #f6f6f6;
+  --bar-border: #e8e8e8;
+  --shadow-color: rgba(0, 0, 0, 0.08);
+  --link-color: #111111;
+  --resume-btn-bg: #111111;
+  --resume-btn-text: #ffffff;
+  --resume-btn-hover: #333333;
+}
+
+body.dark-mode {
+  --bg-color: #111111;
+  --text-color: #f5f5f5;
+  --card-bg: #1b1b1b;
+  --card-border: #333333;
+  --nav-text: #f5f5f5;
+  --button-bg: #1f1f1f;
+  --button-text: #f5f5f5;
+  --muted-text: #b8b8b8;
+  --hero-title-color: #f2f2f2;
+  --hero-kicker-color: #d7c188;
+  --bar-bg: #202020;
+  --bar-border: #343434;
+  --shadow-color: rgba(0, 0, 0, 0.28);
+  --link-color: #f5f5f5;
+  --resume-btn-bg: #f5f5f5;
+  --resume-btn-text: #111111;
+  --resume-btn-hover: #d9d9d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   max-width: 1400px;
   margin: 0 auto;
   padding: 28px 18px 80px;
   line-height: 1.7;
-  background-color: #f9f9f9;
-  color: #111111;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .top-bar {
@@ -18,6 +63,7 @@ body {
   align-items: center;
   padding: 0 0 36px 0;
   width: 100%;
+  gap: 20px;
 }
 
 .site-name {
@@ -26,6 +72,7 @@ body {
   font-weight: 700;
   letter-spacing: 0.01em;
   animation: pastelShift 8s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pastelShift {
@@ -36,24 +83,50 @@ body {
   100% { color: #7faedb; }
 }
 
-nav {
+nav,
+.nav-links {
   display: flex;
+  align-items: center;
   gap: 52px;
   margin-left: auto;
 }
 
-nav a {
+nav a,
+.nav-links a {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   font-size: 11px;
   letter-spacing: 0.6px;
   text-transform: uppercase;
-  color: #111111;
+  color: var(--nav-text);
   text-decoration: none;
   font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav a:hover {
+nav a:hover,
+.nav-links a:hover {
   text-decoration: underline;
+}
+
+.theme-toggle {
+  margin-left: 10px;
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
 }
 
 main {
@@ -106,8 +179,9 @@ section {
   font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #c5ae72;
+  color: var(--hero-kicker-color);
   line-height: 1;
+  transition: color 0.3s ease;
 }
 
 .hero-title {
@@ -118,7 +192,8 @@ section {
   line-height: 0.9;
   letter-spacing: -0.05em;
   text-transform: uppercase;
-  color: #17345f;
+  color: var(--hero-title-color);
+  transition: color 0.3s ease;
 }
 
 .hero-title span {
@@ -132,15 +207,16 @@ section {
   font-weight: 500;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: #666666;
+  color: var(--muted-text);
   min-height: 18px;
+  transition: color 0.3s ease;
 }
 
 .typing-text {
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid #666666;
+  border-right: 2px solid var(--muted-text);
   width: 0;
   max-width: max-content;
   animation: typing 3.2s steps(29, end) 0.5s forwards, blink 0.8s step-end infinite;
@@ -158,12 +234,13 @@ section {
 .draggable-card {
   position: absolute;
   width: 260px;
-  background: #ffffff;
+  background: var(--card-bg);
   border-radius: 18px;
   overflow: hidden;
-  border: 1px solid #e6e6e6;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 30px var(--shadow-color);
   z-index: 20;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .photo-card {
@@ -201,12 +278,13 @@ section {
 
 .mac-card-bar {
   height: 44px;
-  background: #f6f6f6;
+  background: var(--bar-bg);
   display: flex;
   align-items: center;
   gap: 12px;
   padding: 0 14px;
-  border-bottom: 1px solid #e8e8e8;
+  border-bottom: 1px solid var(--bar-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .drag-handle {
@@ -278,12 +356,14 @@ section {
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #666666;
+  color: var(--muted-text);
+  transition: color 0.3s ease;
 }
 
 .mac-card-content {
   padding: 18px;
-  color: #222222;
+  color: var(--text-color);
+  transition: color 0.3s ease;
 }
 
 .mac-card-image {
@@ -293,7 +373,6 @@ section {
   border-radius: 12px;
 }
 
-/* compact contact card */
 .contact-card .mac-card-bar {
   height: 40px;
   padding: 0 12px;
@@ -317,10 +396,10 @@ section {
 }
 
 .contact-icons a {
-  color: #222222;
+  color: var(--text-color);
   font-size: 22px;
   text-decoration: none;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: transform 0.2s ease, opacity 0.2s ease, color 0.3s ease;
 }
 
 .contact-icons a:hover {
@@ -349,8 +428,9 @@ h2 {
   font-size: 26px;
   font-weight: 600;
   margin-bottom: 18px;
-  border-bottom: 1px solid #dddddd;
+  border-bottom: 1px solid var(--card-border);
   padding-bottom: 10px;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 p {
@@ -366,24 +446,26 @@ p {
 
 .skill-tag {
   padding: 10px 16px;
-  border: 1px solid #dddddd;
+  border: 1px solid var(--card-border);
   border-radius: 999px;
   font-size: 14px;
-  background-color: #ffffff;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .project-card {
-  background-color: #ffffff;
+  background-color: var(--card-bg);
   padding: 24px;
   margin-bottom: 22px;
   border-radius: 12px;
-  border: 1px solid #e7e7e7;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  border: 1px solid var(--card-border);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 8px 24px var(--shadow-color);
 }
 
 .project-card h3 {
@@ -394,10 +476,11 @@ p {
 
 .project-tech {
   font-size: 14px;
-  color: #777777;
+  color: var(--muted-text);
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.8px;
+  transition: color 0.3s ease;
 }
 
 .primary-button,
@@ -411,17 +494,19 @@ p {
 }
 
 .resume-button {
-  background-color: #111111;
-  color: white;
+  background-color: var(--resume-btn-bg);
+  color: var(--resume-btn-text);
 }
 
 .resume-button:hover {
-  background-color: #333333;
+  background-color: var(--resume-btn-hover);
   transform: translateY(-2px);
+  text-decoration: none;
 }
 
 a {
-  color: #111111;
+  color: var(--link-color);
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -443,9 +528,11 @@ a:hover {
     gap: 18px;
   }
 
-  nav {
+  nav,
+  .nav-links {
     flex-wrap: wrap;
     gap: 14px 18px;
+    margin-left: 0;
   }
 
   .hero {
@@ -453,16 +540,78 @@ a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .photo-card,
+  .contact-card,
+  .project-card-1,
+  .project-card-2,
+  .project-card-3 {
+    display: none !important;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 90px 0 50px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    gap: 16px;
+    transform: none;
+    text-align: center;
+  }
+
+  .hero-text {
+    align-items: center;
+  }
+
+  .hero-kicker,
+  .hero-subtitle {
+    margin-left: 0;
+  }
+
+  .pixel-character {
+    width: 90px;
+    transform: none;
+  }
+}
+
 @media (max-width: 600px) {
+  body {
+    padding: 20px 16px 50px;
+  }
+
   .site-name {
     font-size: 13px;
   }
 
-  nav a {
-    font-size: 12px;
+  nav,
+  .nav-links {
+    gap: 12px 14px;
+  }
+
+  nav a,
+  .nav-links a {
+    font-size: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  .theme-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 14px;
+    margin-left: 4px;
+  }
+
+  .hero-title {
+    font-size: clamp(32px, 11vw, 46px);
   }
 
   h2 {
     font-size: 24px;
+  }
+
+  p {
+    font-size: 16px;
   }
 }
