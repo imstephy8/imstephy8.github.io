@@ -16,8 +16,52 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: -2px 0 36px 0;
+  padding: 0 0 36px 0;
   width: 100%;
+}
+
+.site-name {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  animation: pastelShift 8s ease-in-out infinite;
+}
+
+@keyframes pastelShift {
+  0% { color: #7faedb; }
+  25% { color: #b39ddb; }
+  50% { color: #e6a6be; }
+  75% { color: #8bbf9f; }
+  100% { color: #7faedb; }
+}
+
+nav {
+  display: flex;
+  gap: 52px;
+  margin-left: auto;
+}
+
+nav a {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: #111111;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  width: 100%;
+}
+
+section {
+  margin-bottom: 90px;
 }
 
 .hero {
@@ -26,6 +70,8 @@ body {
   align-items: center;
   justify-content: center;
   margin-bottom: 0;
+  position: relative;
+  overflow: hidden;
 }
 
 .hero-content {
@@ -35,6 +81,7 @@ body {
   gap: 12px;
   width: fit-content;
   margin: 0 auto;
+  transform: translateY(-50px);
 }
 
 .pixel-character {
@@ -100,76 +147,202 @@ body {
 }
 
 @keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  50% { border-color: transparent; }
 }
 
-.site-name {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 17px;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  animation: pastelShift 8s ease-in-out infinite;
+.draggable-card {
+  position: absolute;
+  width: 260px;
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e6e6e6;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  z-index: 20;
 }
 
-@keyframes pastelShift {
-  0% {
-    color: #7faedb;
-  }
-  25% {
-    color: #b39ddb;
-  }
-  50% {
-    color: #e6a6be;
-  }
-  75% {
-    color: #8bbf9f;
-  }
-  100% {
-    color: #7faedb;
-  }
+.photo-card {
+  top: 10px;
+  left: 60px;
+  width: 340px;
 }
 
-nav {
+.contact-card {
+  left: 35px;
+  bottom: 60px;
+  width: 220px;
+}
+
+.project-card-3 {
+  top: 100px;
+  right: 35px;
+  width: 300px;
+  z-index: 21;
+}
+
+.project-card-2 {
+  top: 270px;
+  right: 55px;
+  width: 300px;
+  z-index: 22;
+}
+
+.project-card-1 {
+  top: 445px;
+  right: 80px;
+  width: 300px;
+  z-index: 23;
+}
+
+.mac-card-bar {
+  height: 44px;
+  background: #f6f6f6;
   display: flex;
-  gap: 52px;
-  margin-left: auto;
+  align-items: center;
+  gap: 12px;
+  padding: 0 14px;
+  border-bottom: 1px solid #e8e8e8;
 }
 
-nav a {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.6px;
+.drag-handle {
+  cursor: grab;
+  user-select: none;
+}
+
+.drag-handle:active {
+  cursor: grabbing;
+}
+
+.mac-dots {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.dot {
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  border: none;
+  padding: 0;
+  display: inline-block;
+  cursor: pointer;
+  transition: transform 0.18s ease, filter 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+
+.red {
+  background: #ff5f57;
+}
+
+.yellow {
+  background: #febc2e;
+}
+
+.green {
+  background: #28c840;
+}
+
+.dot:hover {
+  filter: brightness(0.72);
+  transform: scale(0.95);
+}
+
+.dot:active {
+  filter: brightness(0.58);
+  transform: scale(0.88);
+}
+
+.mac-dots .dot {
+  opacity: 0.95;
+}
+
+.mac-dots:hover .dot {
+  opacity: 1;
+}
+
+.mac-dots:hover .red,
+.mac-dots:hover .yellow,
+.mac-dots:hover .green {
+  filter: brightness(0.9);
+}
+
+.mac-card-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #111111;
-  text-decoration: none;
-  font-weight: 500;
+  color: #666666;
 }
 
-nav a:hover {
-  text-decoration: underline;
+.mac-card-content {
+  padding: 18px;
+  color: #222222;
 }
 
-main {
+.mac-card-image {
   width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
 }
 
-section {
-  margin-bottom: 90px;
+/* compact contact card */
+.contact-card .mac-card-bar {
+  height: 40px;
+  padding: 0 12px;
 }
 
-.hero {
-  margin-bottom: 0;
+.contact-card .mac-card-title {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+}
+
+.contact-card .mac-card-content {
+  padding: 10px 12px;
+}
+
+.contact-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 4px 0;
+}
+
+.contact-icons a {
+  color: #222222;
+  font-size: 22px;
+  text-decoration: none;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.contact-icons a:hover {
+  transform: translateY(-2px);
+  opacity: 0.7;
+}
+
+.draggable-card.dragging {
+  z-index: 9999;
+}
+
+.draggable-card.minimized {
+  width: 220px !important;
+  height: auto;
+}
+
+.draggable-card.minimized .mac-card-content {
+  display: none;
+}
+
+.draggable-card.minimized .mac-card-bar {
+  border-bottom: none;
 }
 
 h2 {
