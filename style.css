@@ -244,7 +244,7 @@ section {
 
 .photo-card {
   top: 10px;
-  left: 60px;
+  left: 20px;
   width: 340px;
 }
 
@@ -255,22 +255,22 @@ section {
 }
 
 .project-card-3 {
-  top: 100px;
-  right: 35px;
+  top: 110px;
+  right: 10px;
   width: 300px;
   z-index: 21;
 }
 
 .project-card-2 {
-  top: 270px;
-  right: 55px;
+  top: 310px;
+  right: 10px;
   width: 300px;
   z-index: 22;
 }
 
 .project-card-1 {
-  top: 445px;
-  right: 80px;
+  top: 510px;
+  right: 10px;
   width: 300px;
   z-index: 23;
 }
