@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link
+    rel="icon"
+    href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">🐟</text></svg>'
+  />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephanie Yu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top-bar">
+    <div class="site-name">Stephanie Yu 🐟</div>
+
+    <nav class="nav-links">
+      <a href="index.html">HOME</a>
+      <a href="about.html">ABOUT</a>
+      <a href="projects.html">PROJECTS</a>
+      <a href="resume.html">RESUME</a>
+      <a href="blog.html">BLOG</a>
+      <a href="off-screen.html">OFF-SCREEN</a>
+      <a href="game.html">GAME</a>
+      <a href="contact.html">CONTACT</a>
+
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        ☾
+      </button>
+</nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img src="icon.png" alt="Pixel character" class="pixel-character">
+
+        <div class="hero-text">
+          <p class="hero-kicker">HELLO, I'M</p>
+          <h1 class="hero-title">
+            <span>STEPHANIE</span>
+            <span>YU.</span>
+          </h1>
+          <p class="hero-subtitle">
+            <span class="typing-text">CERTIFIED SDV LOVER</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="draggable-card photo-card" id="photo-card">
+        <div class="mac-card-bar drag-handle">
+          <div class="mac-dots">
+            <button class="dot red" aria-label="Close photo card"></button>
+            <button class="dot yellow" aria-label="Minimize photo card"></button>
+            <button class="dot green" aria-label="Expand photo card"></button>
+          </div>
+          <span class="mac-card-title">PHOTO</span>
+        </div>
+        <div class="mac-card-content">
+          <img src="StephanieYu.png" alt="Stephanie photo" class="mac-card-image">
+        </div>
+      </div>
+
+      <div class="draggable-card contact-card" id="contact-card">
+        <div class="mac-card-bar drag-handle">
+          <div class="mac-dots">
+            <button class="dot red" aria-label="Close contact card"></button>
+            <button class="dot yellow" aria-label="Minimize contact card"></button>
+            <button class="dot green" aria-label="Expand contact card"></button>
+          </div>
+          <span class="mac-card-title">CONTACT</span>
+        </div>
+        <div class="mac-card-content contact-icons">
+          <a href="mailto:stephanieyu1025@gmail.com" target="_blank" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/imstephy8" target="_blank" aria-label="GitHub">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/stephyu1025/" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="draggable-card project-card-1" id="project-card-1">
+        <div class="mac-card-bar drag-handle">
+          <div class="mac-dots">
+            <button class="dot red" aria-label="Close project 1 card"></button>
+            <button class="dot yellow" aria-label="Minimize project 1 card"></button>
+            <button class="dot green" aria-label="Expand project 1 card"></button>
+          </div>
+          <span class="mac-card-title">PROJECT 01</span>
+        </div>
+        <div class="mac-card-content">
+          <img src="project1.jpg" alt="Project 1" class="mac-card-image">
+        </div>
+      </div>
+
+      <div class="draggable-card project-card-2" id="project-card-2">
+        <div class="mac-card-bar drag-handle">
+          <div class="mac-dots">
+            <button class="dot red" aria-label="Close project 2 card"></button>
+            <button class="dot yellow" aria-label="Minimize project 2 card"></button>
+            <button class="dot green" aria-label="Expand project 2 card"></button>
+          </div>
+          <span class="mac-card-title">PROJECT 02</span>
+        </div>
+        <div class="mac-card-content">
+          <img src="project2.jpg" alt="Project 2" class="mac-card-image">
+        </div>
+      </div>
+
+      <div class="draggable-card project-card-3" id="project-card-3">
+        <div class="mac-card-bar drag-handle">
+          <div class="mac-dots">
+            <button class="dot red" aria-label="Close project 3 card"></button>
+            <button class="dot yellow" aria-label="Minimize project 3 card"></button>
+            <button class="dot green" aria-label="Expand project 3 card"></button>
+          </div>
+          <span class="mac-card-title">PROJECT 03</span>
+        </div>
+        <div class="mac-card-content">
+          <img src="project3.jpg" alt="Project 3" class="mac-card-image">
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
