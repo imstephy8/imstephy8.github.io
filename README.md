@@ -30,16 +30,6 @@ You can view the live website here:
 
 [https://imstephy8.github.io](https://imstephy8.github.io)
 
-## Future Improvements
-
-I plan to continue improving this website as I build more projects and gain more experience. Some future updates may include:
-
-- Adding more software engineering projects
-- Improving mobile responsiveness
-- Updating the design and animations
-- Adding more details about my academic and technical background
-- Connecting the website with my GitHub and other professional profiles
-
 ## Author
 
 **Stephanie Yu**
